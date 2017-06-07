@@ -15,33 +15,34 @@
 </head>
 <body>
 
-	<div class="container" id="twitchtv">
-		<div id="header" class="text-center">
-			<h1>Use the TwitchTV JSON API</h1>
-			
-			<a href="https://www.twitch.tv/freecodecamp.com" target="_blank">
-				<h3 id="fccStatus"></h3>
-			</a>
-		</div>
-			<!-- headers -->
-		<div class="row">
-			<h1>
-				<div class="col col-md-4">
-					Logo:
-				</div>
-				<div class="col col-md-4">
-					Display Name:
-				</div>
-				<div class="col col-md-4">
-					Status
-				</div>
-			</h1>
-		</div>
-
-		<div id="followerInfo">
-
-		</div>
-	</div>
+<body>
+      
+      
+      <div class ="container" id="twitchtv">
+          <div class="row" align="center">
+            <div class="col col-sm-6">
+                <img  class="img-responsive" id="logo" src="http://pre11.deviantart.net/b72b/th/pre/f/2016/063/a/6/logo_by_maxigamer-d9tx6iz.png">            
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col col-sm-6 col-sm-offset-3">
+                  <ul class="nav nav-tabs">
+                    <li class="active" onclick="showAll();"><a data-toggle="tab" href="#" id="tabAll">All</a></li>
+                    <li id="tabOnline" onclick="online();"><a data-toggle="tab" href="#">Online</a></li>
+                    <li onclick="offline();"><a data-toggle="tab" href="#Offline">Offline</a></li>
+                  </ul>  
+            </div>
+          </div>
+      </div>
+      <div class="contanier">
+      	<div class="code">
+      		<p>Coded by: <a href="https://kyknight.github.io/" target="_blank">Kyleigh Knight <img src="http://www.iconninja.com/files/789/193/153/wonder-woman-account-icon.png"></a></p>
+      	</div>
+      </div>
+        
+     
+  </body>
 
 
 		<!-- jQuery CDN -->
