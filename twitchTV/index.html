@@ -15,18 +15,18 @@
 </head>
 <body>
       <div class ="container" id="twitchtv">
-          <div class="row" align="center">
+          <div class="row justify-content-center">
             <div class="col col-sm-6">
                 <img  class="img-responsive" id="logo" src="http://pre11.deviantart.net/b72b/th/pre/f/2016/063/a/6/logo_by_maxigamer-d9tx6iz.png">            
             </div>
           </div>
           
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col col-sm-6">
-                  <ul class="nav nav-tabs justify-content-center">
-                    <li class="active" id="allTab" onclick="showAll();"><a data-toggle="tab" href="#" id="allTab">All</a></li>
-                    <li id="onlineTab" onclick="online();"><a data-toggle="tab" href="#">Online</a></li>
-                    <li id="offlineTab" onclick="offline();"><a data-toggle="tab" href="#offlineTab">Offline</a></li>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item" id="allTab" onclick="showAll();"><a class="nav-link active" data-toggle="tab" href="#" id="allTab">All</a></li>
+                    <li class="nav-item" id="onlineTab" onclick="online();"><a class="nav-link" data-toggle="tab" href="#">Online</a></li>
+                    <li class="nav-item" id="offlineTab" onclick="offline();"><a class="nav-link" data-toggle="tab" href="#offlineTab">Offline</a></li>
                   </ul>  
             </div>
           </div>
@@ -41,3 +41,35 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<!-- <div class="row" id="online">
+	<div class="col col-sm-6">
+		<div class="row" >
+			<div class="col col-sm-2">
+				<img src="'+data.stream.channel.logo+'>
+			</div>
+			<div class="col col-sm-4">
+				<h2>'+data.stream.channel.display_name+'<h2>
+				<p>'+data.stream.channel.status+'.</p>
+				<a href="'+data.stream.channel.url+'" target="_blank">Watch now!</a>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- <div class="row" id="online">
+	<div class="col col-10">
+		<div class="row">
+			<div class="col col-4">
+				<img class="channelLogo" src="'+data.stream.channel.logo+'">
+			</div>
+			<div class="col col-6">
+				<h2>'+data.stream.channel.display_name+'</h2>
+				<p>'+data.stream.channel.status+'</p>
+				<a href="'+data.stream.channel.url+'" target="_blank">WATCH NOW!</a>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+
