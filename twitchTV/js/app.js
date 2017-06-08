@@ -24,7 +24,6 @@ $(document).ready(function(){
                     });                     
                 } else{//Online
                     container.innerHTML +='<div class="row" id="online"><div class="col col-sm-4"><div class="row" ><div class="col col-sm-4"><img src="'+data.stream.channel.logo+'></div><div class="col col-sm-4"><h2>'+data.stream.channel.display_name+'<h2><p>'+data.stream.channel.status+'.</p><a href="'+data.stream.channel.url+'" target="_blank">Watch now!</a></div></div></div></div>';
-                    console.log(data);
                 } 
             },
             error: function (jqXHR, exception) {
