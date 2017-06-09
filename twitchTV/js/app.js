@@ -1,34 +1,36 @@
 //Start jQuery
 $(document).ready(function(){
 	
+	var urlFCC = "https://wind-bow.glitch.me/twitch-api/streams/freecodecamp";
 	var twitchTvs = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "Storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
-	var container = document.getElementById('twitchtv');
+	var url = "https://wind-bow.glitch.me/twitch-api/";
 
-     $.each(twitchTvs,function(data1,channel){
-         $.ajax({
-            type: "GET",
-            url: "https://wind-bow.glitch.me/twitch-api/streams/"+channel,
-            success: function(data){
-                if(data.stream == null){ //Offline
-                    $.ajax({
-                        type: "GET",
-                        url: "https://wind-bow.glitch.me/twitch-api/channels/"+channel,
-                        success: function(data){
-                            if(data.display_name == undefined){//not exist
-                                container.innerHTML +='<div class="row" id="undefined"><div class="col col-sm-6"><div class="row" ><div class="col col-sm-2"></div><div class="col-sm-4"><h2>'+channel+'<h2><p>This channel does not exist.</p></div></div></div></div>';      
-                            }
-                            else{
-                                container.innerHTML +='<div class="row" id="offline"><div class="col col-sm-6"><div class="row" ><div class="col col-sm-2"><img src="'+data.logo+'></div><div class="col col-sm-4"><h2>'+data.display_name+'<h2><p>Channel is offline.</p></div></div></div></div>'; 
-                            }
-                        }                   
-                    });                     
-                } else{//Online
-                    container.innerHTML +='<div class="row" id="online"><div class="col col-sm-6"><div class="row" ><div class="col col-sm-2"><img src="'+data.stream.channel.logo+'></div><div class="col col-sm-4"><h2>'+data.stream.channel.display_name+'<h2><p>'+data.stream.channel.status+'.</p><a href="'+data.stream.channel.url+'" target="_blank">Watch now!</a></div></div></div></div>';
-                } 
-            },
-            error: function (jqXHR, exception) {
-                alert('API unavailable. Try later.');
-            }
-        });         
-     });
+	$.getJSON(urlFCC, function(dataFCC){
+		//FCC online?
+		if(dataA.stream===null){
+			$('#fccStatus').html("Free Code Camp Is Currently Offline.");
+		} else {
+			$('#fccStatus').html("Free Code Camp Is Currently Online.");
+		}
+	});
+
+	//checks if account exists:
+	//	if.user=null --> take off list (account doesn't exist)
+	//		else --> if.stream=null --> displays icon, name, offline[.video_banner]
+	//				else --> displays icon, name, broadcast name, online[.video_banner]
+	$.getJSON(url, function(dataMain){
+		if(dataMain.user===null){
+			//take off list
+		} else {
+			if(dataMain.stream===null){
+				//display icon, name, 'offline'(.video_banner)
+				$('#someID').html('setup look');
+			} else {
+				//display icon, name, display_name, 'online'(.video_banner)
+			}
+		}
+	});
 });
+
+
+
