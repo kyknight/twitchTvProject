@@ -20,7 +20,8 @@ $(document).ready(function(){
 	//				else --> displays icon, name, broadcast name, online[.video_banner]
 	$.getJSON(url, function(dataMain){
 		if(dataMain.user===null){
-			//take off list
+			//displays placeholder image and 'account does not exist'
+			$('').html("<div class='row'><div class='col col-4'><img class='channelLogo' src='https://maxcdn.icons8.com/Share/icon/User_Interface//login_as_user1600.png'></div><div class='col col-6'><p>User account does not exist. <img class='sadFace' src='http://pinkie.mylittlefacewhen.com/media/f/img/mlfw2904-125814_-_animated_extended_rainbow_dash_sadface.gif'></p></div></div>"); 
 		} else {
 			if(dataMain.stream===null){
 				//display icon, name, 'offline'(.video_banner)
