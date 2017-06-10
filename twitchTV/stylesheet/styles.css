@@ -3,6 +3,28 @@
 	margin: 0 auto;
 }
 
+#logo{
+	margin-top: 5%;
+  margin-bottom: 5%;
+	width: 50%;
+}
+
+#fccStatus{
+  text-align: center;
+}
+
+.channelLogo{
+  border-radius: 20px;
+  width: 200%;
+}
+h2{
+  font-size: 15px !important;
+}
+p{
+  font-size: 12px;
+}
+
+
 .code{
 	font-size: 14px;
 }
