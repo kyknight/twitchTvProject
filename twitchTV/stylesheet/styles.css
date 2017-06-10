@@ -3,20 +3,6 @@
 	margin: 0 auto;
 }
 
-#logo{
-	margin-top: 5%;
-	margin-bottom: 5%;
-	width: 50%;
-}
-
-#allTab{
-	margin-right: 5% !important;
-}
-#onlineTab{
-	margin-right: 5% !important;
-}
-
-
 .code{
 	font-size: 14px;
 }

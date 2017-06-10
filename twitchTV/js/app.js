@@ -21,13 +21,14 @@ $(document).ready(function(){
 	$.getJSON(url, function(dataMain){
 		if(dataMain.user===null){
 			//displays placeholder image and 'account does not exist'
-			$('').html("<div class='row'><div class='col col-4'><img class='channelLogo' src='https://maxcdn.icons8.com/Share/icon/User_Interface//login_as_user1600.png'></div><div class='col col-6'><p>User account does not exist. <img class='sadFace' src='http://pinkie.mylittlefacewhen.com/media/f/img/mlfw2904-125814_-_animated_extended_rainbow_dash_sadface.gif'></p></div></div>"); 
+			twitch.innerhtml += "<div class='row'><div class='col col-4'><img class='noLogo' src='https://maxcdn.icons8.com/Share/icon/User_Interface//login_as_user1600.png'></div><div class='col col-6'><p>User account does not exist. <img class='sadFace' src='http://pinkie.mylittlefacewhen.com/media/f/img/mlfw2904-125814_-_animated_extended_rainbow_dash_sadface.gif'></p></div></div>"; 
 		} else {
 			if(dataMain.stream===null){
 				//display icon, name, 'offline'(.video_banner)
-				$('#someID').html('setup look');
+				twitch.innerhtml += "<div class='row'><div class='col col-4'><img class='channelLogo' src="'+dataMain.stream.channel.logo+'"></div><div class='col col-6'><h2>'+dataMain.stream.channel.display_name+'</h2><p>OFFLINE  '+dataMain.stream.channel.video_banner+'</p></div></div>";
 			} else {
 				//display icon, name, display_name, 'online'(.video_banner)
+				twitch.innerhtml += "<div class='row'><div class='col col-4'><img class='channelLogo' src="'+dataMain.stream.channel.logo+'"></div><div class='col col-6'><h2>'+dataMain.stream.channel.display_name+'</h2><p><a href="'+dataMain.stream.channel.url+'" target='_blank'>ONLINE </a>'+dataMain.stream.channel.video_banner+'</p></div></div>";
 			}
 		}
 	});
