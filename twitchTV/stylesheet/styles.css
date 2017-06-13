@@ -30,6 +30,10 @@
   text-align: center;
 }
 
+.sadFace{
+  width:20%;
+}
+
 #twitch{
   padding: 2%;
   background: #9D50BB;  
@@ -40,7 +44,7 @@
   border-radius: 15px;
 }
 
-#online{
+#online, #undefined, #offline{
   border-bottom: 1px ridge black;
   margin: 0 auto;
   padding-top: 1%;

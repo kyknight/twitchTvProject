@@ -23,15 +23,15 @@ $(document).ready(function(){
 		//		else --> if.stream=null --> displays icon, name, offline[.video_banner]
 		//				else --> displays icon, name, broadcast name, online[.video_banner]
 		$.getJSON(urlChannel, function(dataMain){
-			 if(dataMain.user===null){
+			 if(dataMain.display_name==undefined){
 			 	//displays placeholder image and 'account does not exist'
-				container.innerHTML +="<div class='row'><div class='col col-3'><img class='noLogo' src='https://maxcdn.icons8.com/Share/icon/User_Interface//login_as_user1600.png'></div><div class='col col-6'><p>User account does not exist. <img class='sadFace' src='http://pinkie.mylittlefacewhen.com/media/f/img/mlfw2904-125814_-_animated_extended_rainbow_dash_sadface.gif'></p></div></div>"; 
+				container.innerHTML +="<div id='undefined' class='row'><div class='col col-3'><img class='channelLogo' src='https://maxcdn.icons8.com/Share/icon/User_Interface//login_as_user1600.png'></div><div class='col col-6'><p>"+channel+" user account does not exist. <img class='sadFace' src='http://pinkie.mylittlefacewhen.com/media/f/img/mlfw2904-125814_-_animated_extended_rainbow_dash_sadface.gif'></p></div></div>"; 
 			} else {
 
 				$.getJSON(urlChannel, function(data){
-          if(data.stream===null){
+          if(data.status===null){
             //display icon, name, 'offline'(.video_banner)
-            container.innerHTML +="<div class='row'><div class='col col-3'><img class='channelLogo' src="+data.logo+"></div><div class='col col-6'><h2>"+data.display_name+"</h2><p>OFFLINE  "+data.video_banner+"</p></div></div>";
+            container.innerHTML +="<div id='offline' class='row'><div class='col col-3'><img class='channelLogo' src="+data.logo+"></div><div class='col col-6'><h2>"+data.display_name+"</h2><p>OFFLINE <img class='sadFace' src='http://pinkie.mylittlefacewhen.com/media/f/img/mlfw2904-125814_-_animated_extended_rainbow_dash_sadface.gif'></p></div></div>";
           } else {
             //display icon, name, display_name, 'online'(.video_banner)
             container.innerHTML +="<div id='online' class='row'><div class='col col-3'><img class='channelLogo' src="+data.logo+"></div><div class='col col-6'><h2>"+data.display_name+"</h2><p class='onlineLink'><a href="+data.url+" target='_blank'>ONLINE </a></p><p class='channelStatus'>"+data.status+"</p></div></div>";
