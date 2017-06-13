@@ -1,21 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Revalia');
 
-.container{
+.container, body, html{
 	margin: 0 auto;
+  background-color: #240042 !important;
+  background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+  font-family: 'Revalia', cursive;
 }
 
 #logo{
+  margin: 0 auto;
 	margin-top: 5%;
   margin-bottom: 5%;
 	width: 50%;
+}
+
+.fccLink{
+  font-size: 1em;
+  color: grey;
+}
+.fccLink a{
+  color: purple !important;/* change color */
+}
+.fccLink a:hover{
+  text-decoration: none !important;
+  color: orange !important;/* change color */
 }
 
 #fccStatus{
   text-align: center;
 }
 
+#twitch{
+  padding: 2%;
+  background: #9D50BB;  
+  background: -webkit-linear-gradient(to right, #6E48AA, #9D50BB);
+  background: linear-gradient(to right, #6E48AA, #9D50BB); 
+  /*background-color: #6441a5;
+  background-image: url("https://www.transparenttextures.com/patterns/connected.png");*/
+  border-radius: 15px;
+}
+
+#online{
+  border-bottom: 1px ridge black;
+  margin: 0 auto;
+  padding-top: 1%;
+}
+
+.onlineLink a{
+  color: purple !important;/* change color */
+}
+.onlineLink a:hover{
+  text-decoration: none !important;
+  color: orange !important;/* change color */
+}
+
 .channelLogo{
-  border-radius: 20px;
-  width: 200%;
+  border-radius: 40px;
+  width: 80px;
 }
 h2{
   font-size: 15px !important;
@@ -27,14 +68,21 @@ p{
 
 .code{
 	font-size: 14px;
+  color: black;
 }
 .code a{
-	color: purple;
+	color: darkgoldenrod;
 }
 .code a:hover{
-	color: yellow;
+	color: purple;
 	text-decoration: none;
 }
 .code img{
 	width: 4%;
+}
+
+@media only screen and (min-width: 774px){
+  #twitch{
+    margin: 1% 20% 1% 20%;
+  }
 }
